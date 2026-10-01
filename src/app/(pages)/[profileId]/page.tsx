@@ -1,8 +1,8 @@
-import ProjectCard from "@/app/components/commons/project-card";
-import TotalVisits from "@/app/components/commons/total-visits";
-import UserCard from "@/app/components/commons/user-card";
+import ProjectCard from '@/app/components/commons/project-card';
+import TotalVisits from '@/app/components/commons/total-visits';
+import UserCard from '@/app/components/commons/user-card';
 
-import { Plus } from "lucide-react";
+import { Plus } from 'lucide-react';
 
 export default async function ProfilePage({
   params,
