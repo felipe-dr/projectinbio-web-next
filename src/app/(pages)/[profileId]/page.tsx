@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 
 import ProjectCard from '@/app/components/commons/project-card';
 import TotalVisits from '@/app/components/commons/total-visits';
-import UserCard from '@/app/components/commons/user-card';
+import UserCard from '@/app/components/commons/user-card/user-card';
 import { auth } from '@/app/lib/auth';
 import { getDownloadURLFromPath } from '@/app/lib/firebase';
 import {
@@ -55,7 +55,7 @@ export default async function ProfilePage({
             key={project.id}
             project={project}
             isOwner={isOwner}
-            img={await getDownloadURLFromPath(project.imagePath)}
+            img={(await getDownloadURLFromPath(project.imagePath)) || ''}
           />
         ))}
         {isOwner && <NewProject profileId={profileId} />}
