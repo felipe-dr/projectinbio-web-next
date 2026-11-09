@@ -31,7 +31,7 @@ export async function compressFiles(files: File[]) {
 export const compressImage = (file: File): Promise<File> => {
   return new Promise((resolve, reject) => {
     const options = {
-      maxSizeMB: 0.2,
+      maxSizeMB: 0.2, // 200KB
       maxWidthOrHeight: 900,
       useWebWorker: true,
       fileType: 'image/png',
@@ -42,3 +42,8 @@ export const compressImage = (file: File): Promise<File> => {
     });
   });
 };
+
+export function formatUrl(url: string) {
+  const formattedUrl = url.startsWith('http') ? url : `https://${url}`;
+  return formattedUrl;
+}
