@@ -1,10 +1,11 @@
+import 'server-only';
+
 import { cert, getApps, initializeApp } from 'firebase-admin/app';
 import { getFirestore } from 'firebase-admin/firestore';
 import { getStorage } from 'firebase-admin/storage';
 
-import 'server-only';
-
 // Certifcado
+
 const decodedKey = Buffer.from(
   process.env.FIREBASE_PRIVATE_KEYBASE64!,
   'base64',
@@ -37,6 +38,6 @@ export async function getDownloadURLFromPath(path?: string) {
     action: 'read',
     expires: '03-01-2500', // Não deixa expirar
   });
-
+  console.log(url);
   return url;
 }
